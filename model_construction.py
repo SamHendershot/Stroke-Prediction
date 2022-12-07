@@ -129,20 +129,4 @@ recall_score(y_test, pred)
 
 mean_absolute_error(y_test, pred)
 
-# -------------- Pickling Model -------------- #
-
-pickl = {'model': final_model}
-pickle.dump(pickl, open('stroke_model' + '.p', 'wb'))
-
-file_name = 'stroke_model.p'
-with open(file_name, 'rb') as pickled:
-    data = pickle.load(pickled)
-    model = data['model']
-
-
-model.predict(np.array(X_test.iloc[142,:]).reshape(1,-1))
-
-list(X_test.iloc[1,:])
-
-
 
